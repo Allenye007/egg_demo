@@ -5,17 +5,12 @@
 
 
 // sequelize数据库
-// exports.sequelize = {
-//     enable: true,
-//     package: 'egg-sequelize',
-// };
-
-
-// MySQL数据库
-exports.mysql = {
+exports.sequelize = {
     enable: true,
-    package: 'egg-mysql',
+    package: 'egg-sequelize',
 };
+
+
 
 exports.security = {
     xframe: {

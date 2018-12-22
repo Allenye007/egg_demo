@@ -10,12 +10,20 @@ module.exports = appInfo => {
   config.middleware = [];
 
   // 链接数据库
-  // config.sequelize = {
-  //   dialect: 'mysql',
-  //   host: '127.0.0.1',
-  //   port: 3306,
-  //   database: 'express_demo',
-  // };
+  config.sequelize = {
+    dialect: 'mysql',
+    host: '127.0.0.1',
+    port: 3306,
+    database: 'demo',
+    user: 'root',
+    password: '12345678'
+  };
+  
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
   
 
   return config;

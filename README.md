@@ -1,4 +1,4 @@
-# eggdemo02
+# egg_demo
 *
 Router 主要用来描述请求 URL 和具体承担执行动作的 Controller 的对应关系， 框架约定了 app/router.js 文件用于统一所有路由规则。
 app/router.js 里面定义 URL 路由规则

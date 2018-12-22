@@ -1,4 +1,4 @@
-# eggdemo02
+# egg_demo
 
 
 
