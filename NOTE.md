@@ -58,6 +58,9 @@ module.exports = app => {
 ###### 1）
 
 ```
+nodejs.TypeError: ctx.service.chat_create is not a function
+
+await ctx.service.chat.chat_create(P);  service没有.chat!
 
 ```
 
@@ -67,19 +70,20 @@ module.exports = app => {
 NOTE: options.delegate default to model, so app.model is an Instance of Sequelize, so you can use methods like: app.model.sync, app.model.query ，app.model.sync({ force: false });
 
 https://github.com/eggjs/egg-sequelize
-
 ```
-
 ###### 3）
 
 ```
+在router.js文件中引入Controller错误
+
+Error: controller not exists
 
 ```
 
 ###### 4）
 
 ```
-
+一个常见的错误是把 ctx.request.body 和 ctx.body 混淆，后者其实是 ctx.response.body 的简写。
 ```
 
 ###### 5）

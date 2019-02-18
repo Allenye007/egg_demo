@@ -3,39 +3,12 @@
 module.exports = app => {
   const { STRING, INTEGER } = app.Sequelize;
 
-  const Admin = app.model.define('admin_demo', {
-    id: {
-      type: INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    uid: { // 唯一标识
-      type: STRING,
-      primaryKey: true,
-    },
-    vip: {
-      type: INTEGER,
-      defaultValue: 0,
-    },
-    user_name: {
-      type: STRING,
-    },
-    user_pwd: {
-      type: STRING,
-      defaultValue: '123', // 默认值
-    },
-    phone: {
-      type: STRING,
-      defaultValue: '1583000', // 默认值
-    },
-    address: {
-      type: STRING,
-      defaultValue: '1583000', // 默认值
-    },
-    sale_volume: {
-      type: INTEGER,
-      defaultValue: 0,
-    },
+  const Admin = app.model.define('admin', {
+    id: { type: INTEGER, primaryKey: true, autoIncrement: true, comment: '索引' },
+    uid: { type: STRING, primaryKey: true, comment: '用户ID' },
+    vip: { type: STRING, defaultValue: 0, comment: '0普通用户，1普通会员，2超级会员' },
+    name: { type: STRING, defaultValue: '', comment: '用户名' },
+    pwd: { type: STRING, defaultValue: '123', comment: '密码' },
   }, {
     freezeTableName: true,
     timestamps: true,
