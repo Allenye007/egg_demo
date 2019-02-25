@@ -20,6 +20,15 @@ class ChatController extends Controller {
   // 获取所有关键字话题
   async get_all_chat_list() {
     const ctx = this.ctx;
+    // console.log(ctx, 12121212);    
+    // console.log(ctx.bgUser, 123123123);
+    if (!ctx.bgUser) {
+      ctx.body = {
+        code: '5010',
+        msg: '没有权限',
+      };
+      return 0;
+    }
     await ctx.service.chat.get_all_chat_list();
   }
 }

@@ -7,6 +7,13 @@ class AdminController extends Controller {
   async login() {
     const ctx = this.ctx;
     const { name, pwd } = ctx.request.body;
+    // if (!ctx.bgUser) {
+    //   ctx.body = {
+    //     code: '5010',
+    //     msg: '没有权限',
+    //   };
+    //   return 0;
+    // }
     if (!name) {
       ctx.body = '请输入用户名';
     }

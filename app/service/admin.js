@@ -6,9 +6,12 @@ class AdminService extends Service {
   async login(P) {
     const ctx = this.ctx;
     const admin = await ctx.model.Admin.findOne(P);
+    let token = await ctx.service.token.bgUser_sign(P);
     if (admin) {
       if (P.pwd === admin.dataValues.pwd) {
         ctx.body = {
+          // 返回token
+          token,
           code: 5000,
           msg: 'ok',
         };
