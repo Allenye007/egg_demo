@@ -16,7 +16,7 @@ module.exports = app => {
     collate: 'utf8_general_ci',
     engine: 'InnoDB',
     underscored: true,
-    comment: '恋爱话术（一句话）',
+    comment: '话术（一句话）',
   };
   const Saying = app.model.define('saying', schema, define);
   app.model.sync({ force: false });
